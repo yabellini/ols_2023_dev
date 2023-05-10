@@ -192,7 +192,7 @@ In the [Testing Chapter](https://devguide.ropensci.org/building.html?q=testing#t
 [Research Software Engineering with Python](https://merely-useful.tech/py-rse/), [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/building.html?q=testing#testing)
 :::
 
-## Testing - Continuous Integration
+## Testing - Continuous Integration 
 
 __Continuous integration (CI)__: runs tests automatically whenever a change is made. 
 
@@ -204,12 +204,14 @@ __Continuous integration (CI)__: runs tests automatically whenever a change is m
 
 * or on several different operating systems.
 
-* Example: GitHub Actions
-
 :::
 
+. . .
+
+In rOpenSci Dev Guide there is a chapter on _Continuous Integration Best Practices_
+
 ::: footer
-[Research Software Engineering with Python](https://merely-useful.tech/py-rse/), [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/building.html?q=testing#testing)
+[Research Software Engineering with Python](https://merely-useful.tech/py-rse/), [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/ci.html)
 :::
 
 ## Where to learn more {.smaller}
