@@ -31,7 +31,8 @@ Helps disseminate best practice.
 
 Builds a community of practice.
 
-[rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/)
+
+Book [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/)
 
 
 ::: footer
@@ -235,6 +236,16 @@ Python materials:
 General material:
 
 -  The Programmer's Brain by Felienne Hermans.
+
+## How to Participate 
+
+* [Community Contributing Guide](https://contributing.ropensci.org/)
+* [Forum](https://discuss.ropensci.org/)
+* [Events](https://ropensci.org/events/)
+* [Packages](https://ropensci.org/packages/)
+* [Blog](https://ropensci.org/blog/)
+* [Champions Program](https://ropensci.org/champions/)
+* [r-universe](https://ropensci.org/r-universe/)
 
 
 # Thanks for listening. Enjoy coding! :-) 
