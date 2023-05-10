@@ -238,5 +238,5 @@ General material:
 # Thanks for listening. Enjoy coding! :-) 
 
 ::: footer
-yabellini@ropensci.org
+Thanks to Greg wilson for the Python material - yabellini@ropensci.org
 :::
