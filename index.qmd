@@ -1,0 +1,242 @@
+---
+title: "Programming for Science"
+author: "Yani Bellini Saibene - rOpenSci Community Manager - yabellini@ropensci.org"
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: images/lettering_black.svg
+---
+
+## What Is Good Code ?
+
+> The only way to write good code is to write tons of shitty code first. Feeling shame about bad code stops you from getting to good code. - Hadley Wickham
+
+. . .
+
+There are several practices and guidelines to write good code.
+
+. . .
+
+I will talk about styling and testing
+
+
+## rOpenSci (Stats) Software Review
+
+Non adversarial, constructive, transparent, no rejection.
+
+Helps disseminate best practice.
+
+Builds a community of practice.
+
+[rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/)
+
+
+::: footer
+<https://ropensci.org>
+:::
+
+## Code Smells
+
+> Structures in code that suggest refactoring. - Martin Fowler
+
+. . .
+
+Refactoring is to modify _code_ to make it _easy to understand and modify_ without changing behaviour. 
+
+. . .
+
+Code smells create coginitive load and it is more likely to contain errors.
+
+
+::: footer
+The Programmer's Brain by Felienne Hermans
+:::
+
+## Code - Naming things {.smaller}
+
+Code smell: _linguistic antippatern_
+
+Code do something different than names involved suggest.
+
+. . .
+
+A variable `is_valid` that contains an _integer_ (the name suggests a _boolean_). 
+
+. . .
+
+::: {.incremental}
+
+* _Variable_ and _function_ names should use only _lowercase letters, numbers, and underscores_. 
+
+* _variable_ names should be _nouns_ and 
+
+* _function_ names should be _verbs_. 
+
+* _avoid_ re-using names of common functions and variables.
+
+* Strive for names that are _concise_ and _meaningful_ (this is not easy!).
+
+* Agree on _one mold_ to name variable and _be consistent_ on your code base.
+
+:::
+
+::: footer
+The Programmer's Brain by Felienne Hermans, [The tidyverse style guide](https://style.tidyverse.org/index.html)
+:::
+
+
+## Code - Organizing things {.smaller}
+
+Style Guides: conventions to write code.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.incremental}
+* Always put a space after a comma, never before.
+* Do not put spaces inside or outside parentheses for regular function calls.
+* Place a space before and after =
+* For R: 
+  - Use `styler` and `lintr` packages.
+  - [The tidyverse style guide](https://style.tidyverse.org/index.html)
+* For Python:
+  - [The standard Python style guide](https://peps.python.org/pep-0008/)
+:::
+:::
+
+::: {.column width="50%"}
+![](images/code_identation.jpg)
+:::
+
+::::
+
+## Testing
+
+> How to be sure our code produce reliable results? We can't - not completely - but we can test its behavior againts our expectations to decide if we are sure enough. - Research Software Engineering with Python. Building software that makes research possible
+
+. . .
+
+Assume that mistakes will happen and guard against them (defensive programming).
+
+## Testing - Assertions
+
+__Assertions:__ used to catching errors. We introduce assertions to our code so that it checks itself as it runs (Python’s `assert` statement or R’s `stopifnot` functions). 
+
+::: {.incremental}
+
+* A _precondition_ is something that must be true at the start of a function in order for it to work correctly. 
+
+* A _postcondition_ is something that the function guarantees is true when it finishes.
+
+* An _invariant_ is something that is true for every iteration in a loop. 
+
+:::
+
+::: footer
+[Research Software Engineering with Python](https://merely-useful.tech/py-rse/)
+:::
+
+## Testing - Unit Testing
+
+__Unit Testing__: used to prevent errors. Unit test checks the correctness of a single unit of software, for example a function. 
+
+A unit test will typically have:
+
+::: {.incremental}
+
+* a _fixture_, which is the thing being tested (the data);
+* a _result_ the code produces when given the fixture; and
+* an _expected result_ that the result is compared to.
+
+::: 
+
+. . .
+
+_We request packages have a test suite, preferably unit tests for all functions, ensuring key functionality is covered. (75% test coverage)._
+
+::: footer
+[Research Software Engineering with Python](https://merely-useful.tech/py-rse/), [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/building.html?q=testing#testing)
+:::
+
+## Testing - Integration Testing
+
+__Integration Testing__: unit tests give us some confidence that our units of code work in isolation. Integration testing check they work correctly together.
+
+. . .
+
+Integration tests are structured the same way as unit tests: a fixture is used to produce an actual result that is compared against the expected result.
+
+. . .
+
+However, creating the fixture and running the code can be considerably more complicated. 
+
+::: footer
+[Research Software Engineering with Python](https://merely-useful.tech/py-rse/), [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/building.html?q=testing#testing)
+:::
+
+## Testing - Testing Frameworks
+
+__Testing Frameworks__: helps to run and manage several unit test.
+
+* For R: [testthat](https://testthat.r-lib.org/index.html)
+* For Python: [pytest](https://pytest.org/)
+
+. . .
+
+In the [Testing Chapter](https://devguide.ropensci.org/building.html?q=testing#testing) of rOpenSci Guide there are several other packages recommendation if you need to test access to databases, creating plots, interaction with web resources, among other task.
+
+::: footer
+[Research Software Engineering with Python](https://merely-useful.tech/py-rse/), [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/building.html?q=testing#testing)
+:::
+
+## Testing - Continuous Integration
+
+__Continuous integration (CI)__: runs tests automatically whenever a change is made. 
+
+::: {.incremental}
+
+* tells developers immediately if changes have caused problems.
+
+* can set up to run tests with several different configurations of the software
+
+* or on several different operating systems.
+
+* Example: GitHub Actions
+
+:::
+
+::: footer
+[Research Software Engineering with Python](https://merely-useful.tech/py-rse/), [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/building.html?q=testing#testing)
+:::
+
+## Where to learn more {.smaller}
+
+R materials:
+
+- [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/)
+
+- [Tidyverse Style Guide](https://style.tidyverse.org/index.html) 
+
+- Testing in R: [testthat](https://testthat.r-lib.org/), [swamp](https://github.com/maelle/swamp,), [HTTP testing in R](https://books.ropensci.org/http-testing/index.html)
+
+Python materials:
+
+- [The SciPy developers' guide](https://docs.scipy.org/doc//scipy/dev/core-dev/index.html)
+
+- [The standard Python style guide](https://peps.python.org/pep-0008/): 
+
+- [Research Software Engineering with Python](https://merely-useful.tech/py-rse/) 
+
+General material:
+
+-  The Programmer's Brain by Felienne Hermans.
+
+
+# Thanks for listening. Enjoy coding! :-) 
+
+::: footer
+yabellini@ropensci.org
+:::
